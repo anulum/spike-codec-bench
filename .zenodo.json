@@ -1,0 +1,18 @@
+{
+  "creators": [
+    {
+      "affiliation": "ANULUM",
+      "name": "Šotek, Miroslav",
+      "orcid": "0009-0009-3560-0851"
+    }
+  ],
+  "description": "Architecture-only repository validation tooling and design for source-bound spike-compression measurement. No installed benchmark package, codec execution or qualified benchmark result is released.",
+  "keywords": [
+    "spike compression",
+    "measurement",
+    "reproducibility"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "title": "Spike Codec Bench",
+  "upload_type": "software"
+}
