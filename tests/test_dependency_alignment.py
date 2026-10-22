@@ -16,6 +16,7 @@ import os
 import shutil
 import subprocess
 import sys
+import sysconfig
 from collections.abc import Iterator
 from importlib.metadata import distributions
 from pathlib import Path
@@ -440,3 +441,36 @@ def test_invalid_root_arguments_have_fixed_public_diagnostics(value: str) -> Non
     output = io.StringIO()
     assert main(["--root", value, "--json"], stdout=output) == 4
     assert json.loads(output.getvalue()) == report.as_dict()
+
+
+def test_actual_base_interpreter_requires_a_virtual_environment(candidate: Path) -> None:
+    """Refuse the supported base interpreter when no virtual environment selects the graph."""
+    environment = dict(os.environ, PYTHONPATH=sysconfig.get_path("purelib"))
+    actual = subprocess.run(
+        [
+            str(Path(sys.executable).resolve()),
+            "-m",
+            "coverage",
+            "run",
+            "--parallel-mode",
+            "--branch",
+            "--source=tools",
+            str(SOURCE / "tools/check_dependency_alignment.py"),
+            "--root",
+            str(candidate),
+            "--json",
+        ],
+        cwd=SOURCE,
+        env=environment,
+        text=True,
+        capture_output=True,
+        timeout=20,
+        check=False,
+    )
+    assert actual.returncode == 3, actual.stdout + actual.stderr
+    report = json.loads(actual.stdout)
+    assert {
+        "path": "installed_environment",
+        "code": "virtual_environment_required",
+    } in report["reasons"]
+    assert not any(issue["code"] == "interpreter_not_selected" for issue in report["reasons"])

@@ -12,7 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-PROVENANCE_SHA256 = "c4be6cdea837e31bb4562834f58afe5807625cb2687ca811ff1f97700c43c162"
+PROVENANCE_SHA256 = "7415846df71cc8c3666adbadf42414c3bfb01ed2563bf9e5678c5ac9b8a81509"
 ROLES = {
     "ci.yml": "correctness",
     "pre-commit.yml": "hook-parity",
@@ -30,7 +30,7 @@ SCORECARD = (
     "docker://ghcr.io/ossf/scorecard-action@sha256:"
     "1e1481c65fc2407d3fd6ab18a23c741eb4d1c0d9359ebafc4b3ab13aa61d8627"
 )
-UV_CHECKSUM = "b9980552309f09c15172b8be828555e375097f16deb459795ce7bfd200380f0b"
+UV_CHECKSUM = "2b428396f12572d4429cf210ca234dd599a33b3af0958a4d5ed569d63e3f344f"
 MAX_BYTES = 262_144
 
 
@@ -137,7 +137,7 @@ def _action_valid(action: str, inputs: object) -> bool:
         return inputs == {"persist-credentials": False, "fetch-depth": 0}
     if action == SETUP_UV:
         return (
-            inputs.get("version") == "0.12.22"
+            inputs.get("version") == "0.13.4"
             and inputs.get("python-version") == "3.13.16"
             and inputs.get("checksum") == UV_CHECKSUM
             and inputs.get("python-arch") == "x86_64"
