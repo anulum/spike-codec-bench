@@ -2,11 +2,11 @@
   "capabilities": [],
   "claims": [],
   "evidence_maturity": "architecture_only",
-  "lifecycle": "local_scaffold",
+  "lifecycle": "public_repository",
   "qualified_owned_schema_ids": [],
   "repository_name": "SPIKE-CODEC-BENCH",
   "source_metadata": {
     "path": "repository-domain.json",
-    "sha256": "e2beaf8c8b5cb542aac548c1e100dff90a520eb30d271caa03e9ff95c3095bcc"
+    "sha256": "5f64836dc6060bb1f5fc11c04a1bfa6b7c89cf81ffb0d754f9c6b9eb32dd59fc"
   }
 }

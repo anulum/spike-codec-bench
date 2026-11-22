@@ -12,6 +12,8 @@ SPIKE-CODEC-BENCH — repository foundation
 
 Spike Codec Bench is being built to measure the payload size, distortion, encode/decode latency and memory cost of spike-compression codecs under explicit source and measurement protocols. This checkout currently contains repository validation tooling and documentation. Full foundation qualification is in progress. There is no installed benchmark package, executable codec runner, public benchmark command or measured benchmark result.
 
+Spike Codec Bench is part of the **SC Neuromorphic Computing Systems** group (SC-NEUROMORPHIC-COMPUTING-SYSTEMS). The [group and project map](https://github.com/anulum/sc-neurocore/blob/main/docs/ecosystem.md) shows the whole programme and where this repository sits in it.
+
 ## Boundary
 
 Codec algorithms and decoders remain in SC-NeuroCore. This project owns the planned input registry, adapters, independent metrics, matrix runner and reports. Shared evidence operations belong to the separately installed Evidence Manifest Toolkit. Vendor-format conversion belongs to Spike Format Bridge; the owned input formats are SPIKE-LOG and NPY.
