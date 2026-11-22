@@ -7,4 +7,4 @@
 # SPIKE-CODEC-BENCH — bounded repository workflows
 
 # Instrument only the real unsupported Python test fixture.
-coverage==7.16.2
+coverage==7.17.3
