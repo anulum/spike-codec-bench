@@ -10,7 +10,7 @@
 # Development-only tools: static quality, real CLI tests, strict rendering,
 # licensing, dependency security and source inventories. No domain dependencies.
 bandit==1.9.4
-coverage==7.16.2
+coverage==7.17.3
 cyclonedx-bom==7.5.0
 jsonschema==4.26.0
 markdown==3.11
